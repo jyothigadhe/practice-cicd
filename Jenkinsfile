@@ -4,13 +4,19 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building Stage'
+                echo 'Build Stage'
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Test Stage'
+            }
+        }
+
+        stage('Docker Build') {
+            steps {
+                sh 'docker build -t myapp:latest .'
             }
         }
 
